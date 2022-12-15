@@ -7,13 +7,18 @@ class Room
 public:
 	Room();
 	~Room();
+	void Print(ostream& out = cout) const;
 
 private:
-	char*		name;
+	string		name;
 	Item*		items;
+	int			num_of_items;
 	Monster*	monsters;
+	int			num_of_monsters;
 	Room*		north;
 	Room*		south;
 	Room*		east;
 	Room*		west;
 };
+
+ostream& operator << (ostream& out, Room& room);
