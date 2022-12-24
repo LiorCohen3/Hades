@@ -6,8 +6,9 @@ class Game
 {
 public:
 	Game();
-	~Game();
-
+	~Game() {};
+	void changeMap(string name);
+	void addMapToGame(Map* map);
 private:
 	Map*	currentMap;
 	Data	data;

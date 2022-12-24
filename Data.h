@@ -5,9 +5,12 @@ class Data
 {
 public:
 	Data();
-	~Data();
-
+	~Data() {};
+	Map* addMap(Map* map);
+	Map* findMapByName(string name);
 private:
-	Map*	mapsData;
+	Map**	mapsData;
+	int		num_of_maps;
 	Room*	roomsData;
+	int		num_of_rooms;
 };
