@@ -19,7 +19,7 @@ public:
 	Room(const Room& room);
 	~Room() {};
 	Room& operator += (const Item& item);
-	Room operator + (const Item& item) const;
+	Room& operator += (const Monster& monster);
 	int getId() const { return ID; }
 	bool getVisited() const { return visited; }
 	void setVisited(bool new_visited) { visited = new_visited; }

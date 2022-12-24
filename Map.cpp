@@ -115,15 +115,19 @@ Room* Map::AddRoom(Room& room, Direction direction)
 		switch (direction)
 		{
 		case North:
+			new_room->setSouth(currentRoom);
 			currentRoom->setNorth(new_room);
 			break;
 		case East:
+			new_room->setWest(currentRoom);
 			currentRoom->setEast(new_room);
 			break;
 		case South:
+			new_room->setNorth(currentRoom);
 			currentRoom->setSouth(new_room);
 			break;
 		case West:
+			new_room->setEast(currentRoom);
 			currentRoom->setWest(new_room);
 			break;
 		}

@@ -65,12 +65,40 @@ Room& Room::operator += (const Item& item)
 			{
 				items[num_of_items] = Item(item.getName(), Common);
 				num_of_items++;
-				return *this;
 			}
+			else
+			{
+				items[i]++;
+			}
+			return *this;
 		}
 	}
 	items[num_of_items] = item;
 	num_of_items++;
+	return *this;
+}
+
+/*----------------------------------------------------------------------------------*/
+Room& Room::operator += (const Monster& monster)
+{
+	for (int i = 0; i < num_of_monsters; i++)
+	{
+		if (monsters[i].getName() == monster.getName())
+		{
+			if (monsters[i].getLevel() == 5)
+			{
+				monsters[num_of_monsters] = Monster(monster.getName(), 1);
+				num_of_monsters++;
+			}
+			else
+			{
+				monsters[i]++;
+			}
+			return *this;
+		}
+	}
+	monsters[num_of_monsters] = monster;
+	num_of_monsters++;
 	return *this;
 }
 
