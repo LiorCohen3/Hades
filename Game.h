@@ -9,6 +9,9 @@ public:
 	~Game() {};
 	void changeMap(string name);
 	void addMapToGame(Map* map);
+	void addRoomToGame(Room room);
+	Room getRoomFromData(int id);
+
 private:
 	Map*	currentMap;
 	Data	data;

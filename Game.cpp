@@ -23,3 +23,15 @@ void Game::addMapToGame(Map* map)
 		currentMap = m;
 	}
 }
+/*----------------------------------------------------------------------------------*/
+void Game::addRoomToGame(Room room)
+{
+	data.addRoom(room);
+}
+/*----------------------------------------------------------------------------------*/
+Room Game::getRoomFromData(int id)
+{
+	Room room = data.getRoom(id);
+	return room;
+}
+/*----------------------------------------------------------------------------------*/

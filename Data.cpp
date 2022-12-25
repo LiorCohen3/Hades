@@ -37,3 +37,51 @@ Map* Data::findMapByName(string name)
 	cout << "Map not in data!" << endl;
 	return NULL;
 }
+
+/*----------------------------------------------------------------------------------*/
+bool Data::isRoomInData(int id)
+{
+	for (int i = 0; i < num_of_rooms; i++)
+	{
+		if (roomsData[i].getId() == id)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+/*----------------------------------------------------------------------------------*/
+Room Data::getRoom(int id)
+{
+	bool res = isRoomInData(id);
+	if (res == false)
+	{
+		cout << "Room not in data!" << endl;
+		return;
+	}
+	
+	for (int i = 0; i < num_of_rooms; i++)
+	{
+		if (roomsData[i].getId() == id)
+		{
+			return roomsData[i];
+		}
+	}
+}
+/*----------------------------------------------------------------------------------*/
+bool Data::addRoom(Room room)
+{
+	bool res = isRoomInData(room.getId());
+	if (res == true)
+	{
+		cout << "Room is already in data!" << endl;
+		return false;	//room not added
+	}
+
+	roomsData[num_of_rooms] = room;
+	num_of_rooms++;
+	return true; 		//room added
+
+
+}
+/*----------------------------------------------------------------------------------*/
